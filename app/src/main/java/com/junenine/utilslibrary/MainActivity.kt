@@ -11,8 +11,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.junenine.composeutils.string.StringUtils
 import com.junenine.utilslibrary.ui.theme.UtilsLibraryTheme
-import com.skydoves.whatif.whatIfNotNull
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,9 +20,9 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             UtilsLibraryTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) {   innerPadding ->
+                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     Greeting(
-                        name = "Android",
+                        name = StringUtils.capitalizeFirstLetter("android").orEmpty(),
                         modifier = Modifier.padding(innerPadding)
                     )
                 }

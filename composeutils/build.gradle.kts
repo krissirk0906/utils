@@ -4,12 +4,14 @@ plugins {
     id("maven-publish")
 }
 
+group = "com.junenine.composeutils"
+version = "1.0.1"
+
 android {
     namespace = "com.junenine.composeutils"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.junenine.composeutils"
         minSdk = 24
         targetSdk = 35
         versionCode = 1
@@ -76,7 +78,6 @@ publishing {
 }
 
 dependencies {
-
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
