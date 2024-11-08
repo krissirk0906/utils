@@ -1,7 +1,8 @@
 plugins {
-    alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
-    id("maven-publish")
+    id("com.android.library")
+
+    `maven-publish`
 }
 
 group = "com.junenine.composeutils"
@@ -14,9 +15,6 @@ android {
     defaultConfig {
         minSdk = 24
         targetSdk = 35
-        versionCode = 1
-        versionName = "1.0"
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
             useSupportLibrary = true
@@ -55,7 +53,6 @@ android {
         publishing {
             singleVariant("release") {
                 withSourcesJar()
-                withJavadocJar()
             }
         }
     }
@@ -66,15 +63,13 @@ publishing {
         register<MavenPublication>("release") {
             groupId = "com.github.krissirk0906"
             artifactId = "utils"
-            version = "1.0.0"
+            version = "1.0.2"
 
             afterEvaluate {
                 from(components["release"])
             }
         }
     }
-
-
 }
 
 dependencies {

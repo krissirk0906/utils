@@ -29,5 +29,6 @@ whatif = { module = "com.github.skydoves:whatif", version.ref = "whatif" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
+android-library = { id = "com.android.lirary", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 
